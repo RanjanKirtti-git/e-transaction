@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="css/acc.css">
+    <link rel="stylesheet" href="webjars/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            background:linear-gradient(#4568dc,#b06ab3);
+
+        }
+    </style>
+</head>
+<body>
+<header th:replace="~{fragment/frag :: header}"></header>
+<br><br><br><br><br>
+<div style="width:800px; margin:0 auto; border: 2px solid black">
+    <br><br>
+    <h2 th:text="${idnot}"></h2>
+    <form th:action="@{subforgot}" method="post">
+        <input type="text" name="uid" placeholder="Enter Your UserId" class="form-control" ><br><br>
+        <input type="submit" class="btn btn-light" style="width: 100%">
+    </form>
+
+    <br><br>
+<!--  <a th:href=" ">Go To Login Page</a>-->
+</div>
+<footer th:replace="~{fragment/frag :: footer}"></footer>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Account</title>
+    <link rel="stylesheet" th:href="@{css/acc.css}">
+    <link rel="stylesheet" href="webjars/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            background:black;
+
+        }
+    </style>
+</head>
+<body>
+<header th:replace="~{fragment/frag :: header}"></header>
+<br><br><br>
+
+<h2 th:text="${errsub}"></h2>
+<div class="container-fluid">
+<form th:action="@{accsub}" method="post" enctype="multipart/form-data" th:object="${cust1}" class="form-group"
+      style="text-align: -moz-left" >
+    <table class="table table-striped table-dark"  style="border:3px solid greenyellow;margin-left:auto;margin-right:auto;">
+        <tr>
+            <th><h3>Enter FirstName :</h3></th>
+            <td><input type="text" th:field="*{firstName}" class="form-control"></td>
+        </tr>
+        <tr>
+            <th><h3>Enter LastName :</h3></th>
+            <td><input type="text" th:field="*{lastName}" class="form-control"></td>
+        </tr>
+        <tr>
+            <th><h3>Enter Password :</h3></th>
+            <td><input type="password" th:field="*{password}" class="form-control"></td>
+        </tr>
+        <tr>
+            <th><h3>Enter Email :</h3></th>
+            <td><input type="text" th:field="*{email}" class="form-control"></td>
+        </tr>
+        <tr>
+            <th><h3>Enter PhoneNumber :</h3></th>
+            <td><input type="text" th:field="*{phNo}" class="form-control"></td>
+        </tr>
+        <tr>
+            <th><h3>Enter Address :</h3></th>
+            <td><input type="text" th:field="*{adrs}" class="form-control"></td>
+        </tr>
+        <tr>
+            <th><h3>Select Gender :</h3></th>
+            <td>
+                <input type="radio" th:field="*{gender}"  th:value="Male" th:text="Male">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" th:field="*{gender}" th:value="FeMale" th:text="FeMale">
+            </td>
+        </tr>
+        <tr>
+            <th><h3>Select Your Photo copy :</h3></th>
+            <td><input type="file" name="cimg" class="form-control-file"></td>
+        </tr>
+        <tr>
+            <th> <h3>Account Type :</h3></th>
+            <td>
+                <input type="radio" th:field="*{cash}" th:value="0" th:text="' Zero Account'">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" th:field="*{cash}" th:value="1000" th:text="' One Thousand Account'">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" th:field="*{cash}" th:value="5000" th:text="' Five Thousand Account'">
+            </td>
+        </tr>
+    </table>
+    <br>
+    <input type="submit" class="btn btn-success" style="width: 100%">
+</form>
+</div>
+<br><br><br>
+<footer th:replace="~{fragment/frag :: footer}"></footer>
+</body>
+</html>

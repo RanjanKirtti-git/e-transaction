@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Start Transaction</title>
+    <link rel="stylesheet" href="css/acc.css">
+    <link rel="stylesheet" href="webjars/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            background:linear-gradient(#ff5f6d,#ffc371);
+
+        }
+    </style>
+</head>
+<body>
+<header th:replace="~{fragment/frag :: header}"></header>
+<br><br><br><br><br>
+
+<h2 th:text="${dontid}" style="color: white;text-align: center"></h2>
+<h2 th:text="${dontcash}" style="color: white;text-align: center"></h2>
+<h2 th:text="${donttran}" style="color: white;text-align: center"></h2>
+<div style="width:800px; margin:0 auto; border: 2px solid black">
+<form th:action="@{subtransaction}" method="post">
+    <br>
+    <input type="text" name="tuid" placeholder="Enter Target UserId" class="form-control"><br><br>
+    <input type="number" name="tamo" placeholder="Enter Transaction Amount" class="form-control"><br><br>
+    <input type="submit"  value="SEND" class="btn btn-warning" style="width: 100%">
+</form>
+    <h5 style="text-align: right"><a th:href="home" style="color: white">Go To Home Page</a></h5>
+</div>
+
+<footer th:replace="~{fragment/frag :: footer}"></footer>
+</body>
+</html>

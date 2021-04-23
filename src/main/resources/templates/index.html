@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/acc.css">
+    <link rel="stylesheet" href="webjars/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            background:linear-gradient(#2193b0,#6dd5ed);
+
+        }
+    </style>
+</head>
+<body>
+<header th:replace="~{fragment/frag :: header}"></header>
+<br><br><br><br>
+
+<div class="container-fluid" >
+    <h2 th:text="${perr}"></h2>
+    <h2 th:text="${uerr}"></h2>
+    <h2 th:text="${accdelete}"></h2>
+    <h2 th:text="${datasubm}"></h2>
+    <h2 th:text="${psuc}"></h2>
+    <div style="border: 4px solid white">
+    <form th:action="@{indexsub}" method="post" th:object="${cust}">
+
+            <h1>Enter Your UserId</h1><br>
+            <input type="text" th:field="*{userId}" class="form-control">
+
+            <h1>Enter Your Password</h1><br>
+            <input type="password" th:field="*{password}" class="form-control">
+            <br><br>
+            <input type="submit" value="Login" class="btn btn-light" style="color:blue;font-family:cursive;width: 100%">
+            <br>
+    </form>
+        <h5 style="text-align: right;"><a href="forgot" style="color: red">Forgot Password</a></h5>
+    </div>
+    <h3>Don't Have An Account  To Create Account !!! <a href="newacc" style="color:red">Click Here</a> To Create New Account..</h3>
+</div>
+
+<footer th:replace="~{fragment/frag :: footer}"></footer>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Your Account</title>
+    <link rel="stylesheet" href="css/acc.css">
+    <link rel="stylesheet" href="webjars/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            background:linear-gradient(#cc2b5e,#753a88);
+
+        }
+    </style>
+</head>
+<body>
+<header th:replace="~{fragment/frag :: header}"></header>
+<br><br><br><br><br>
+<div class="container-fluid" >
+    <div style="border: 3px solid greenyellow">
+<form th:action="subaccupdate" method="post" th:object="${upddata}">
+
+    <table class="table table-striped table-dark table-hover">
+        <tr>
+            <th><h3>Enter Your New First Name :</h3></th>
+            <td><input type="text"  th:field="*{firstName}" value="" class="form-control"></td>
+        </tr>
+        <tr>
+            <th><h3>Enter Your New Last Name :</h3></th>
+            <td> <input type="text" th:field="*{lastName}" class="form-control"></td>
+        </tr>
+
+        <tr>
+            <th><h3>Enter New Email :</h3></th>
+            <td><input type="text" th:field="*{email}" class="form-control"></td>
+        </tr>
+        <tr>
+            <th><h3>Enter New Password :</h3></th>
+            <td><input type="text" th:field="*{password}" class="form-control"></td>
+        </tr>
+        <tr>
+            <th><h3>Enter New Phone Number :</h3></th>
+            <td><input type="text" th:field="*{phNo}" class="form-control"></td>
+        </tr>
+        <tr>
+            <th><h3>Enter New Address :</h3></th>
+            <td><input type="text" th:field="*{adrs}" class="form-control"></td>
+        </tr>
+    </table>
+    <input type="submit" value="Update Your Details" class="btn btn-outline-success" style="width: 100%">
+</form>
+<h5 style="text-align: right"><a th:href="home" style="color: greenyellow">Go To Home Page</a></h5>
+    </div>
+</div>
+<br><br><br><br><br>
+<footer th:replace="~{fragment/frag :: footer}"></footer>
+</body>
+</html>

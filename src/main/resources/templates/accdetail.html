@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Account Details</title>
+    <link rel="stylesheet" href="css/acc.css">
+    <link rel="stylesheet" href="webjars/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            background:linear-gradient(#aa076b,#61045f);
+
+        }
+    </style>
+</head>
+<body>
+<header th:replace="~{fragment/frag :: header}"></header>
+<br><br><br><br><br>
+<div class="container-fluid">
+<table class="table table-striped table-dark"  style="border:3px solid greenyellow;margin-left:auto;margin-right:auto;">
+    <tr>
+        <th>First Name</th>
+        <td th:text="${accdata.firstName}"></td>
+    </tr>
+    <tr>
+        <th>Last Name</th>
+        <td th:text="${accdata.lastName}"></td>
+    </tr>
+    <tr>
+        <th>User Id</th>
+        <td th:text="${accdata.userId}"></td>
+    </tr>
+    <tr>
+        <th>Password</th>
+        <td th:text="${accdata.password}"></td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td th:text="${accdata.email}"></td>
+    </tr>
+    <tr>
+        <th>Phone Number</th>
+        <td th:text="${accdata.phNo}"></td>
+    </tr>
+    <tr>
+        <th>Gender</th>
+        <td th:text="${accdata.gender}"></td>
+    </tr>
+    <tr>
+        <th>Address</th>
+        <td th:text="${accdata.adrs}"></td>
+    </tr>
+</table>
+<h5 style="text-align: right"><a th:href="home" style="color: greenyellow">Go To Home Page</a></h5>
+
+</div>
+<footer th:replace="~{fragment/frag :: footer}"></footer>
+</body>
+</html>

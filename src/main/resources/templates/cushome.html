@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome To Home</title>
+    <link rel="stylesheet" href="css/acc.css">
+    <link rel="stylesheet" href="webjars/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            background:linear-gradient(#dc2430,#7b4397);
+
+        }
+    </style>
+</head>
+
+<body>
+<header th:replace="~{fragment/frag :: header}"></header>
+<br><br><br><br><br>
+<div class="container container-fluid">
+    <div class="row">
+        <div class="col-lg-4">
+            <img th:src="@{demo(name=${accdata.getCimage()})}" alt="Image Not Found" height="393" width="370" style="border: 3px solid chartreuse">
+        </div>
+
+        <div class=" col-lg-8">
+            <div>
+                <h2 th:text="${wish}" style="color: chartreuse;font-family: Georgia;font-style: italic;font-weight: bold ;background-color:#61045f;text-align: center"></h2>
+            </div>
+            <div >
+                <a th:href="@{accdetails}" class="btn btn-primary" style="width:100%">Your Account Details</a>
+            </div>
+            <br>
+            <div>
+                <a th:href="@{accupd}" class="btn btn-success" style="width:100%">Update Your Account</a>
+            </div>
+            <br>
+            <div>
+                <a th:href="@{toamo}" class="btn btn-primary" style="width:100%">Total Amount</a>
+            </div>
+            <br>
+            <div>
+                <a th:href="@{tran}" class="btn btn-success" style="width:100%" >Transfer</a>
+            </div>
+            <br>
+            <div>
+                <a th:href="@{delacc}" onclick="return del();" class="btn btn-danger" style="width:100%">Delete Your Account</a>
+            </div>
+            <br>
+            <div>
+                <a th:href="@{log}" class="btn btn-danger" style="width:100%">Logout</a>
+            </div>
+            <div>
+                <h3 th:text="${updatesucc}" style="color: white;font-family: Georgia"></h3>
+                <h3 th:text="${updatesuc}" style="color: white;font-family: Georgia"></h3>
+                <h3 th:text="${accdontdelete}" style="color: white;font-family: Georgia"></h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function del() {
+        if(confirm("Do You Want Delete Your Account Permanately ?"))
+            return true;
+        return false;
+    }
+</script>
+
+<footer th:replace="~{fragment/frag :: footer}"></footer>
+</body>
+</html>
